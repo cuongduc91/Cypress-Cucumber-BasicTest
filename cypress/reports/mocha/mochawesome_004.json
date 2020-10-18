@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-10-16T08:47:28.396Z",
+    "end": "2020-10-16T08:47:32.957Z",
+    "duration": 4561,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5eb18570-0989-46de-9009-7e40a466ff7f",
+      "title": "",
+      "fullFile": "cypress\\integration\\QAM\\TC05_then.spec.js",
+      "file": "cypress\\integration\\QAM\\TC05_then.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cf8fb88d-e228-407e-afae-23adcec6fd75",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a new post",
+              "fullTitle": "Create and mark-unmark as favorite Create a new post",
+              "timedOut": null,
+              "duration": 4492,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('ul.navbar-nav').children().contains('New Post').click();\ncy.hash().should('include', '#/editor');\ncy.get('form').within(function ($form) {\n  cy.get('input').first().type('Test');\n  cy.get('input').eq(1).type('Test 1');\n  cy.get('textarea').type('Test 2');\n  cy.contains('Publish Article').click();\n});\ncy.url().should('include', 'article');",
+              "err": {},
+              "uuid": "f61b070e-4bb6-4fd4-981e-080d7d376c3a",
+              "parentUUID": "cf8fb88d-e228-407e-afae-23adcec6fd75",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f61b070e-4bb6-4fd4-981e-080d7d376c3a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4492,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

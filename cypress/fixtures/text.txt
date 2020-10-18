@@ -1,0 +1,5 @@
+cmd to combine json files to one: 
+mochawesome-merge --reportDir ./cypress/reports/mocha > ./cypress/reports/mochareports/report.json
+
+cmd to generate html report: 
+marge ./cypress/reports/mochareports/report.json -f report -o ./cypress/reports/mochareports

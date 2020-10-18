@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-10-16T08:47:00.438Z",
+    "end": "2020-10-16T08:47:06.391Z",
+    "duration": 5953,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d7139962-c2ba-4265-afde-dc0ff4b682db",
+      "title": "",
+      "fullFile": "cypress\\integration\\QAM\\TC02_url.spec.js",
+      "file": "cypress\\integration\\QAM\\TC02_url.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d53db2d0-3560-4700-9171-c93151fe6eb1",
+          "title": "Create and mark-unmark as favorite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign in",
+              "fullTitle": "Create and mark-unmark as favorite Sign in",
+              "timedOut": null,
+              "duration": 2102,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://react-redux.realworld.io/#/login');\ncy.title().should('eq', 'Conduit');\ncy.location('protocol').should('eq', 'http:');\ncy.get('input[type=\"email\"]').type('bdcuong91@gmail.com');\ncy.get('input[type=\"password\"]').type('Cuongduc91');\ncy.get('.btn').contains('Sign in').should('be.visible').click();\ncy.contains('Your Feed', {\n  timeout: 6000\n}).should('be.visible');",
+              "err": {},
+              "uuid": "80edc50a-f9f5-43eb-9482-b0b005c1b62a",
+              "parentUUID": "d53db2d0-3560-4700-9171-c93151fe6eb1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a new post",
+              "fullTitle": "Create and mark-unmark as favorite Create a new post",
+              "timedOut": null,
+              "duration": 1629,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.nav-link').contains('New Post').click();\ncy.hash().should('include', '#/editor');\ncy.get('input[placeholder=\"Article Title\"]').type('Test');\ncy.get('input[placeholder=\"What\\'s this article about?\"]').type('Test 1');\ncy.get('textarea[placeholder=\"Write your article (in markdown)\"]').type('Test 2');\ncy.contains('Publish Article').click();\ncy.url().should('include', 'article');",
+              "err": {},
+              "uuid": "a558cd20-a7d9-4650-9d41-7c366f41ae92",
+              "parentUUID": "d53db2d0-3560-4700-9171-c93151fe6eb1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unmark as favorite",
+              "fullTitle": "Create and mark-unmark as favorite Mark-unmark as favorite",
+              "timedOut": null,
+              "duration": 2178,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.nav-link').contains('Cuong').click();\ncy.contains('My Articles').should('be.visible');\ncy.get('.ion-heart', {\n  timeout: 6000\n}).click({\n  multiple: true\n});\ncy.contains('Test 1').should('be.visible');\ncy.get('.ion-heart', {\n  timeout: 6000\n}).click({\n  multiple: true\n});\ncy.reload(); // cy.contains('No articles are here... yet').should('be.visible');\n// cy.go('back');\ncy.contains('Favorited Articles').click();\ncy.url().should('include', 'favorites'); // cy.go(-1)",
+              "err": {},
+              "uuid": "85e66f61-3d38-4484-90bb-83b2b4a725b4",
+              "parentUUID": "d53db2d0-3560-4700-9171-c93151fe6eb1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "80edc50a-f9f5-43eb-9482-b0b005c1b62a",
+            "a558cd20-a7d9-4650-9d41-7c366f41ae92",
+            "85e66f61-3d38-4484-90bb-83b2b4a725b4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5909,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
